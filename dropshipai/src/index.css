@@ -12,64 +12,25 @@
   --card: 240 10% 10%;
   --card-foreground: 0 0% 98%;
 
-  --popover: 240 10% 10%;
-  --popover-foreground: 0 0% 98%;
-
   --primary: 262 83% 58%;
-  --primary-foreground: 0 0% 100%;
-
   --secondary: 330 81% 60%;
-  --secondary-foreground: 0 0% 100%;
-
-  --muted: 240 5% 15%;
-  --muted-foreground: 240 5% 65%;
-
   --accent: 25 95% 53%;
-  --accent-foreground: 0 0% 100%;
-
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 0 0% 98%;
-
-  --border: 0 0% 100% / 0.1;
-  --input: 240 5% 15%;
-  --ring: 262 83% 58%;
 
   --radius: 1rem;
 }
 
 /* ================= BASE ================= */
 @layer base {
-  * {
-    @apply border;
-  }
-
   body {
-    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-sans antialiased overflow-x-hidden;
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-sans antialiased;
 
     font-family: 'Inter', sans-serif;
-
-    background-image: 
-      radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.05), transparent 25%),
-      radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.05), transparent 25%);
-    background-attachment: fixed;
   }
 }
 
 /* ================= UTILITIES ================= */
 @layer utilities {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg;
-  }
-  
-  .glass-panel {
-    @apply bg-black/40 backdrop-blur-2xl border border-white/10;
-  }
-
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-orange-500;
-  }
-
-  .bg-gradient-primary {
-    @apply bg-gradient-to-r from-purple-600 to-pink-600;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }
 }
