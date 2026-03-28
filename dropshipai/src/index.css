@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --font-sans: 'Inter', sans-serif;
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  /* DARK THEME BY DEFAULT - Vercel/Linear inspired */
+  --background: 240 50% 4%; /* #0a0a0f */
+  --foreground: 0 0% 98%;
+
+  --card: 240 10% 10%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 10% 10%;
+  --popover-foreground: 0 0% 98%;
+
+  /* Purple #7c3aed */
+  --primary: 262 83% 58%; 
+  --primary-foreground: 0 0% 100%;
+
+  /* Pink #ec4899 */
+  --secondary: 330 81% 60%; 
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 240 5% 15%;
+  --muted-foreground: 240 5% 65%;
+
+  /* Orange #f97316 */
+  --accent: 25 95% 53%; 
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 100% / 0.1; /* white/10 */
+  --input: 240 5% 15%;
+  --ring: 262 83% 58%;
+
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.05), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.05), transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom utility for the glassmorphism effect */
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
+  
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-2xl border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-orange-500;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600;
+  }
+}

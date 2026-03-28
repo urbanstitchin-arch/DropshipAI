@@ -1,0 +1,18 @@
+packages:
+  "framer-motion": "For page transitions, smooth hover effects, and premium landing page animations"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+  "lucide-react": "For beautiful, consistent iconography across the dashboard and landing page"
+
+images:
+  - path: "artifacts/dropshipai/public/images/hero-glow.png"
+    description: "Abstract dark background with intense ethereal purple and pink glowing orbs and light leaks, very dark and cinematic, tech feeling"
+    aspect_ratio: "16:9"
+  - path: "artifacts/dropshipai/public/images/portal.png"
+    description: "A mysterious glowing ring portal in deep space, glowing pink and purple edges, transparent center"
+    aspect_ratio: "1:1"
+
+notes:
+  - Application relies entirely on frontend UI components, mocking the backend states for now.
+  - Used wouter for routing.
+  - No auth backend integrated yet, forms simply transition state or route to dashboard.
